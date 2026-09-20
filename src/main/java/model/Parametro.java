@@ -4,9 +4,9 @@ public class Parametro {
 
     private String nome;
     private String descricao;
-    private String obrigatorio;
+    private boolean obrigatorio;
 
-    public Parametro(String nome, String descricao, String obrigatorio) {
+    public Parametro(String nome, String descricao, boolean obrigatorio) {
         this.nome = nome;
         this.descricao = descricao;
         this.obrigatorio = obrigatorio;
@@ -15,6 +15,10 @@ public class Parametro {
     // Construtor para caso comum: parametro obrigatorio
     public Parametro(String nome, String descricao) {
         this(nome, descricao, true);
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public String getDescricao() {
