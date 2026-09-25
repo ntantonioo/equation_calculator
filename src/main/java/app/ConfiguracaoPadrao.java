@@ -5,6 +5,8 @@ import operacao.aritmetica.Soma;
 import operacao.aritmetica.Multiplicacao;
 import operacao.aritmetica.Subtracao;
 import operacao.geometria.AreaCirculo;
+import operacao.geometria.AreaQuadrado;
+import operacao.geometria.AreaTrapezio;
 import operacao.geometria.AreaTriangulo;
 import operacao.segundoGrau.EquacaoSegundoGrau;
 import service.CalculadoraService;
@@ -22,6 +24,8 @@ public class ConfiguracaoPadrao {
         catalogoOperacoes.registrar(new EquacaoSegundoGrau());
         catalogoOperacoes.registrar(new AreaCirculo());
         catalogoOperacoes.registrar(new AreaTriangulo());
+        catalogoOperacoes.registrar(new AreaQuadrado());
+        catalogoOperacoes.registrar(new AreaTrapezio());
 
         return new CalculadoraService(catalogoOperacoes);
     }
