@@ -16,8 +16,8 @@ public class Subtracao extends OperacaoBase {
 
     private static ArrayList<Parametro> montarParametros() {
         ArrayList<Parametro> lista = new ArrayList<>();
-        lista.add(new Parametro("a", "primeira parcela"));
-        lista.add(new Parametro("b", "segunda parcela"));
+        lista.add(new Parametro("a", "minuendo(de onde se subtrai)"));
+        lista.add(new Parametro("b", "subtraendo( o que sera subtraido)"));
         return lista;
     }
 
@@ -25,11 +25,11 @@ public class Subtracao extends OperacaoBase {
     protected Resultado calcular(Entrada entrada) {
         double a = entrada.get("a");
         double b = entrada.get("b");
-        double subtracao = a - b;
+        double diferenca = a - b;
 
         Resultado resultado = new Resultado("Subtracao");
-        resultado.adicionarPasso(a + " - " + b + " = " + subtracao);
-        resultado.adicionarValor("subtração", subtracao);
+        resultado.adicionarPasso(a + " - " + b + " = " + diferenca);
+        resultado.adicionarValor("diferenca", diferenca);
         return resultado;
     }
 }

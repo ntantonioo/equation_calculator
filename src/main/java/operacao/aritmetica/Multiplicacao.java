@@ -17,8 +17,8 @@ public class Multiplicacao extends OperacaoBase {
 
     private static ArrayList<Parametro> montarParametros() {
         ArrayList<Parametro> lista = new ArrayList<>();
-        lista.add(new Parametro("a","multiplicando"));
-        lista.add(new Parametro("b","multiplicador"));
+        lista.add(new Parametro("a","primeiro fator"));
+        lista.add(new Parametro("b","segundo fator"));
         return lista;
     }
 
@@ -31,11 +31,11 @@ public class Multiplicacao extends OperacaoBase {
     protected Resultado calcular(Entrada entrada) {
         double a = entrada.get("a");
         double b = entrada.get("b");
-        double multiplicacao = a * b;
+        double produto = a * b;
 
         Resultado resultado = new Resultado("Multiplicação");
-        resultado.adicionarPasso(a + " x " + b + " = " + multiplicacao);
-        resultado.adicionarValor("multiplicacao", multiplicacao);
+        resultado.adicionarPasso(a + " x " + b + " = " + produto);
+        resultado.adicionarValor("produto", produto);
         return resultado;
     }
 }
