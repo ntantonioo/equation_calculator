@@ -4,10 +4,7 @@ import operacao.aritmetica.Divisao;
 import operacao.aritmetica.Soma;
 import operacao.aritmetica.Multiplicacao;
 import operacao.aritmetica.Subtracao;
-import operacao.geometria.AreaCirculo;
-import operacao.geometria.AreaQuadrado;
-import operacao.geometria.AreaTrapezio;
-import operacao.geometria.AreaTriangulo;
+import operacao.geometriaPlana.*;
 import operacao.segundoGrau.EquacaoSegundoGrau;
 import service.CalculadoraService;
 import service.CatalogoOperacoes;
@@ -26,6 +23,7 @@ public class ConfiguracaoPadrao {
         catalogoOperacoes.registrar(new AreaTriangulo());
         catalogoOperacoes.registrar(new AreaQuadrado());
         catalogoOperacoes.registrar(new AreaTrapezio());
+        catalogoOperacoes.registrar(new TeoremaPitagoras());
 
         return new CalculadoraService(catalogoOperacoes);
     }
