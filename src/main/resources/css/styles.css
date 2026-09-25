@@ -1,0 +1,114 @@
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #f4f6f8;
+}
+
+/* --- Barra lateral (categorias) --- */
+
+.barra-lateral {
+    -fx-background-color: #2b2d42;
+    -fx-padding: 24;
+    -fx-pref-width: 220;
+}
+
+.titulo-app {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.botao-categoria {
+    -fx-background-color: #3a3d5c;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 12 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: infinity;
+}
+
+.botao-categoria:hover {
+    -fx-background-color: #ef233c;
+}
+
+.botao-categoria-selecionado {
+    -fx-background-color: #ef233c;
+}
+
+/* --- Area central --- */
+
+.area-central {
+    -fx-padding: 32;
+}
+
+.titulo-secao {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b2d42;
+}
+
+.botao-operacao {
+    -fx-background-color: white;
+    -fx-text-fill: #2b2d42;
+    -fx-font-size: 14px;
+    -fx-padding: 14 18;
+    -fx-background-radius: 10;
+    -fx-border-color: #d8dce1;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: infinity;
+}
+
+.botao-operacao:hover {
+    -fx-border-color: #ef233c;
+    -fx-text-fill: #ef233c;
+}
+
+/* --- Formulario de parametros --- */
+
+.rotulo-campo {
+    -fx-font-size: 13px;
+    -fx-text-fill: #555b6e;
+}
+
+.campo-texto {
+    -fx-padding: 8 10;
+    -fx-background-radius: 6;
+    -fx-border-color: #d8dce1;
+    -fx-border-radius: 6;
+    -fx-font-size: 14px;
+}
+
+.botao-calcular {
+    -fx-background-color: #ef233c;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.botao-calcular:hover {
+    -fx-background-color: #d90429;
+}
+
+/* --- Caixa de resultado --- */
+
+.caixa-resultado {
+    -fx-padding: 18;
+    -fx-background-radius: 10;
+    -fx-font-size: 14px;
+}
+
+.resultado-sucesso {
+    -fx-background-color: #d8f3dc;
+    -fx-text-fill: #1b4332;
+}
+
+.resultado-erro {
+    -fx-background-color: #ffccd5;
+    -fx-text-fill: #9d0208;
+}
