@@ -24,17 +24,20 @@ public class AreaQuadrado extends OperacaoBase {
     @Override
     protected void validar(Entrada entrada) {
         super.validar(entrada);
-        //TODO
+
+        double lado = entrada.get("lado");
+        if (lado <= 0) {
+            throw new ParametroInvalidoException("Lado deve ser positivo");
+        }
     }
 
     @Override
     protected Resultado calcular(Entrada entrada) {
-        double a = entrada.get("lado");
-
-        double area = a * a;
+        double lado = entrada.get("lado");
+        double area = lado * lado;
 
         Resultado resultado = new Resultado("Area do Quadrado");
-        resultado.adicionarPasso("Area do Quadrado = a(Lado)^2 " + " = " + area);
+        resultado.adicionarPasso("area = lado^2 = " + lado + "^2 = " + area);
         resultado.adicionarValor("area", area);
         return resultado;
     }
