@@ -1,4 +1,4 @@
-import operacao.geometria.AreaCirculo;
+import operacao.geometriaPlana.AreaCirculo;
 
 import exception.ParametroInvalidoException;
 import model.Entrada;

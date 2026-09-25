@@ -1,4 +1,4 @@
-import operacao.geometria.AreaTriangulo;
+import operacao.geometriaPlana.AreaTriangulo;
 
 import exception.ParametroInvalidoException;
 import model.Entrada;

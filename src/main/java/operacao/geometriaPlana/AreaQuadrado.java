@@ -1,4 +1,4 @@
-package operacao.geometria;
+package operacao.geometriaPlana;
 
 import exception.ParametroInvalidoException;
 import model.Categoria;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class AreaQuadrado extends OperacaoBase {
 
     public AreaQuadrado() {
-        super("Area o Quadrado", Categoria.GEOMETRIA, montarParametros());
+        super("Area o Quadrado", Categoria.GEOMETRIA_PLANA, montarParametros());
     }
 
     private static ArrayList<Parametro> montarParametros() {

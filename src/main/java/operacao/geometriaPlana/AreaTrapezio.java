@@ -1,4 +1,4 @@
-package operacao.geometria;
+package operacao.geometriaPlana;
 
 import exception.ParametroInvalidoException;
 import model.Categoria;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class AreaTrapezio extends OperacaoBase {
 
     public AreaTrapezio() {
-        super("Area do Trapezio", Categoria.GEOMETRIA, montarParametros());
+        super("Area do Trapezio", Categoria.GEOMETRIA_PLANA, montarParametros());
     }
 
     private static ArrayList<Parametro> montarParametros() {

@@ -2,8 +2,8 @@ package app;
 
 import operacao.aritmetica.Divisao;
 import operacao.aritmetica.Soma;
-import operacao.geometria.AreaCirculo;
-import operacao.geometria.AreaTriangulo;
+import operacao.geometriaPlana.AreaCirculo;
+import operacao.geometriaPlana.AreaTriangulo;
 import operacao.segundoGrau.EquacaoSegundoGrau;
 import service.CalculadoraService;
 import service.CatalogoOperacoes;
