@@ -12,19 +12,19 @@ import service.CatalogoOperacoes;
 public class ConfiguracaoPadrao {
 
     public static CalculadoraService montarService() {
-        CatalogoOperacoes catalogoOperacoes = new CatalogoOperacoes();
+        CatalogoOperacoes catalogo = new CatalogoOperacoes();
 
-        catalogoOperacoes.registrar(new Soma());
-        catalogoOperacoes.registrar(new Divisao());
-        catalogoOperacoes.registrar(new Multiplicacao());
-        catalogoOperacoes.registrar(new Subtracao());
-        catalogoOperacoes.registrar(new EquacaoSegundoGrau());
-        catalogoOperacoes.registrar(new AreaCirculo());
-        catalogoOperacoes.registrar(new AreaTriangulo());
-        catalogoOperacoes.registrar(new AreaQuadrado());
-        catalogoOperacoes.registrar(new AreaTrapezio());
-        catalogoOperacoes.registrar(new TeoremaPitagoras());
+        catalogo.registrar(new Divisao());
+        catalogo.registrar(new Soma());
+        catalogo.registrar(new Multiplicacao());
+        catalogo.registrar(new Subtracao());
+        catalogo.registrar(new EquacaoSegundoGrau());
+        catalogo.registrar(new AreaCirculo());
+        catalogo.registrar(new AreaTriangulo());
+        catalogo.registrar(new AreaQuadrado());
+        catalogo.registrar(new AreaTrapezio());
+        catalogo.registrar(new TeoremaPitagoras());
 
-        return new CalculadoraService(catalogoOperacoes);
+        return new CalculadoraService(catalogo);
     }
 }
