@@ -32,7 +32,6 @@ public class Cone extends OperacaoBase {
             throw new ParametroInvalidoException("O raio e a altura precisam ser maiores que zero");
         }
     }
-
     private double calcularGeratriz(double raio, double altura) {
         return Math.sqrt(raio * raio + altura * altura);
     }
