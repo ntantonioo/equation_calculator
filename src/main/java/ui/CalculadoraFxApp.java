@@ -73,8 +73,10 @@ public class CalculadoraFxApp extends Application {
                 return "\u2795"; // +
             case SEGUNDO_GRAU:
                 return "\uD83D\uDCC8"; // grafico
-            case GEOMETRIA:
+            case GEOMETRIA_PLANA:
                 return "\uD83D\uDCD0"; // esquadro
+            case GEOMETRIA_ESPACIAL:
+                return "\uD83E\uDDCA";
             default:
                 return "\u2022";
         }
