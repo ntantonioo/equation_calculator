@@ -27,6 +27,7 @@ public class ConfiguracaoPadrao {
         catalogo.registrar(new TeoremaPitagoras());
         catalogo.registrar(new Cubo());
         catalogo.registrar(new Cilindro());
+        catalogo.registrar(new Cone());
 
         return new CalculadoraService(catalogo);
     }
