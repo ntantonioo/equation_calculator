@@ -7,7 +7,8 @@ public enum Categoria {
 
     ARITMETICA("Aritmetica"),
     SEGUNDO_GRAU("Equações do 2° grau"),
-    GEOMETRIA("Geometria");
+    GEOMETRIA_PLANA("Geometria Plana"),
+    GEOMETRIA_ESPACIAL("Geometria Espacial");
 
     private final String nomeExibicao;
 
