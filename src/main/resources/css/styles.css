@@ -95,6 +95,46 @@
     -fx-background-color: #d90429;
 }
 
+/* --- Teclado numerico (estilo calculadora) --- */
+
+.teclado {
+    -fx-background-color: white;
+    -fx-padding: 16;
+    -fx-background-radius: 10;
+    -fx-border-color: #d8dce1;
+    -fx-border-radius: 10;
+}
+
+.botao-teclado {
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-background-color: #f1f3f5;
+    -fx-text-fill: #2b2d42;
+    -fx-cursor: hand;
+}
+
+.botao-teclado:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.botao-teclado-funcao {
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-background-color: #ffe8cc;
+    -fx-text-fill: #e8890c;
+    -fx-cursor: hand;
+}
+
+.botao-teclado-funcao:hover {
+    -fx-background-color: #ffd8a8;
+}
+
 /* --- Caixa de resultado --- */
 
 .caixa-resultado {
