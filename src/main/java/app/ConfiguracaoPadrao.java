@@ -6,6 +6,7 @@ import operacao.aritmetica.Multiplicacao;
 import operacao.aritmetica.Subtracao;
 import operacao.geometriaPlana.*;
 import operacao.geometricaEspacial.*;
+import operacao.primeiroGrau.EquacaoPrimeiroGrau;
 import operacao.segundoGrau.EquacaoSegundoGrau;
 import service.CalculadoraService;
 import service.CatalogoOperacoes;
@@ -19,6 +20,7 @@ public class ConfiguracaoPadrao {
         catalogo.registrar(new Soma());
         catalogo.registrar(new Multiplicacao());
         catalogo.registrar(new Subtracao());
+        catalogo.registrar(new EquacaoPrimeiroGrau());
         catalogo.registrar(new EquacaoSegundoGrau());
         catalogo.registrar(new AreaCirculo());
         catalogo.registrar(new AreaTriangulo());
