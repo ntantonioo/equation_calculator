@@ -6,6 +6,7 @@ package model;
 public enum Categoria {
 
     ARITMETICA("Aritmetica"),
+    PRIMEIRO_GRAU("Equações de 1° grau"),
     SEGUNDO_GRAU("Equações do 2° grau"),
     GEOMETRIA_PLANA("Geometria Plana"),
     GEOMETRIA_ESPACIAL("Geometria Espacial");
