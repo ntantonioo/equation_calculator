@@ -6,6 +6,7 @@ import model.Entrada;
 import model.Parametro;
 import model.Resultado;
 import operacao.Operacao;
+import operacao.aritmetica.AvaliadorExpressao;
 import service.CalculadoraService;
 
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class ConsoleUI {
         for (int i = 0; i < categorias.length; i ++) {
             System.out.println(" " + (i + 1) + " - " + categorias[i]);
         }
-        System.out.println(" 0 - Sair");
+        System.out.println(" 0 - Voltar");
 
         int opcao = lerInteiro("Escolha uma categoria: ");
         if (opcao == 0) {
@@ -101,6 +102,33 @@ public class ConsoleUI {
             entrada.adicionar(parametro.getNome(), valor);
         }
         return entrada;
+    }
+
+    private void calcularExpressaoLivre() {
+        System.out.println();
+        String expressao = lerTexto("Digite a expressao: ");
+
+        try {
+            AvaliadorExpressao avaliador = new AvaliadorExpressao();
+            double resultado = avaliador.avaliar(expressao);
+
+            System.out.println();
+            System.out.println("Expressao: " + expressao);
+            System.out.println("Multiplicacao e divisao sao resolvidas antes de soma e subtracao:");
+            for (String passo : avaliador.getPassos()) {
+                System.out.println("  " + passo);
+            }
+            System.out.println("Resultado: " + resultado);
+
+        } catch (ParametroInvalidoException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+
+    private String lerTexto(String mensagem) {
+        scanner.nextLine();
+        System.out.print(mensagem);
+        return scanner.nextLine();
     }
 
     private int lerInteiro(String mensagem) {
