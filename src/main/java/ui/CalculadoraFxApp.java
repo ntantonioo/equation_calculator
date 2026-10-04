@@ -8,6 +8,7 @@ import model.Parametro;
 import model.Resultado;
 import operacao.Operacao;
 import service.CalculadoraService;
+import operacao.aritmetica.AvaliadorExpressao;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -67,6 +68,12 @@ public class CalculadoraFxApp extends Application {
             barra.getChildren().add(botao);
         }
 
+        barra.getChildren().add(new Label(" "));
+        Button botaoCalculoComposto = new Button("\uD83E\uDDEE Calculo Composto");
+        botaoCalculoComposto.getStyleClass().add("botao-categoria");
+        botaoCalculoComposto.setOnAction(evento -> mostrarCalculoComposto());
+        barra.getChildren().add(botaoCalculoComposto);
+
         return barra;
     }
 
@@ -74,6 +81,8 @@ public class CalculadoraFxApp extends Application {
         switch (categoria) {
             case ARITMETICA:
                 return "\u2795"; // +
+            case PRIMEIRO_GRAU:
+                return "\uD83D\uDCCF";
             case SEGUNDO_GRAU:
                 return "\uD83D\uDCC8"; // grafico
             case GEOMETRIA_PLANA:
@@ -180,6 +189,69 @@ public class CalculadoraFxApp extends Application {
         if (primeiroCampo != null) {
             campoAtivo = primeiroCampo;
             primeiroCampo.requestFocus();
+        }
+    }
+
+    private void mostrarCalculoComposto() {
+        areaCentral.getChildren().clear();
+        camposDoFormulario.clear();
+        campoAtivo = null;
+
+        Label titulo = new Label("\uD83E\uDDEE  Calculo composto");
+        titulo.getStyleClass().add("titulo-secao");
+        areaCentral.getChildren().add(titulo);
+
+        VBox colunaCampos = new VBox(10);
+
+        Label rotulo = new Label("Expressao");
+        rotulo.getStyleClass().add("rotulo-campo");
+
+        TextField campoExpressao = new TextField();
+        campoExpressao.getStyleClass().add("campo-texto");
+
+        campoExpressao.focusedProperty().addListener((observavel, perdeuFoco, ganhouFoco) -> {
+            if (ganhouFoco) {
+                campoAtivo = campoExpressao;
+            }
+        });
+
+        colunaCampos.getChildren().add(rotulo);
+        colunaCampos.getChildren().add(campoExpressao);
+
+        Button botaoCalcular = new Button("Calcular");
+        botaoCalcular.getStyleClass().add("botao-calcular");
+        botaoCalcular.setOnAction(evento -> calcularExpressaoLivre(campoExpressao.getText()));
+        colunaCampos.getChildren().add(botaoCalcular);
+
+        labelResultado = new Label();
+        labelResultado.getStyleClass().add("caixa-resultado");
+        labelResultado.setWrapText(true);
+        colunaCampos.getChildren().add(labelResultado);
+
+        HBox linha = new HBox(24, colunaCampos, construirTeclado());
+        areaCentral.getChildren().add(linha);
+
+        campoAtivo = campoExpressao;
+        campoExpressao.requestFocus();
+    }
+
+    private void calcularExpressaoLivre(String expressaoTexto) {
+        try{
+            AvaliadorExpressao avaliador = new AvaliadorExpressao();
+            double valorFinal = avaliador.avaliar(expressaoTexto);
+
+            StringBuilder texto = new StringBuilder();
+            texto.append("Expressao: ").append(expressaoTexto).append("\n\n");
+            texto.append("Multiplicacao e divisao sao resolvidas antes da soma e subtracao: \n");
+            for (String passo : avaliador.getPassos()) {
+                texto.append(" ").append(passo).append("\n");
+            }
+            texto.append("\nResultado: ").append(valorFinal);
+
+            mostrarResultado(texto.toString(), true);
+
+        } catch (ParametroInvalidoException e) {
+            mostrarResultado(e.getMessage(), false);
         }
     }
 
