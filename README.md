@@ -10,6 +10,7 @@ Atualmente, o projeto contempla:
 
 * Operações aritméticas
 * Cálculos geométricos
+* Equações de primeiro grau
 * Equações de segundo grau
     
 ## Objetivo
